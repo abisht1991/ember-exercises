@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # super-rentals
 
 This README outlines the details of collaborating on this Ember application.
@@ -54,3 +55,8 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+=======
+# ember-exercises
+ember-exercise for basic exercises
+For crud operations created basic express server do start that to work with CRUD problem.
+>>>>>>> 3388b7cc18dcac62a77ee2ff99cd4a5d20e533c0
