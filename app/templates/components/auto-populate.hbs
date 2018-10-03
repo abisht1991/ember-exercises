@@ -1,0 +1,18 @@
+<!-- {{yield}} -->
+<h4 class="prob-heading">Auto -populate</h4>
+<div class="autocomplete" style="width:300px;">
+  <!-- <input id="myInput" type="text" placeholder="Country" oninput={{action "autopopulate"}} onkeydown={{action "keydownHandler"}}> -->
+{{input id="myInput" value=country type="text" placeholder="Country" input=(action 'autopopulate') keyUp=(action 'keyUpHandler')}}
+      <div id="myInputautocomplete-list" class="autocomplete-items">
+        {{#each fileterdCountries as |item index|}}
+          <div class="{{if (is-focused index currentFocus) 'autocomplete-active' ''}}" {{action "countrySelector" item on="click"}}>{{highlight-auto country item}}
+            <input type="hidden" value="India">
+          </div>
+        {{/each}}
+      </div>
+</div>
+<!-- <ul class="results">
+  {{#each countries as |item|}}
+    <li>{{item}}</li>
+  {{/each}}
+</ul> -->

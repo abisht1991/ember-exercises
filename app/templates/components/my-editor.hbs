@@ -1,0 +1,22 @@
+<h4 class="prob-heading">My Editor</h4>
+<div class="row">
+  <div class="col-xs-6">
+    <label>Paste your JSON Here</label>
+    {{textarea value=name cols="40" rows="20"}}
+  </div>
+  <div class="col-xs-6">
+    <label>Formated JSON</label>
+    <div class="formated-json">
+      <ul>
+          {{#if (is-object itemList)}}
+              {{my-obj-display obj-data=itemList}}
+            {{else if (is-array itemList)}}
+              {{my-array-display array-data=itemList}}
+          {{/if}}
+          {{#if parseError}}
+            Kindly Enter Valid a JSON
+          {{/if}}
+      </ul>
+    </div>
+  </div>
+</div>

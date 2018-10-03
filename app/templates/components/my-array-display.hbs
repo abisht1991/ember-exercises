@@ -1,0 +1,13 @@
+<ul>
+  {{#each array-data as |item index|}}
+    <li>
+      {{#if (is-string item)}}
+          {{item}}
+        {{else if (is-array item)}}
+          {{my-array-display array-data=item}}
+        {{else if (is-object item)}}
+            {{my-obj-display obj-data=item}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

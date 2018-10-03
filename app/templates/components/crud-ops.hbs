@@ -1,0 +1,75 @@
+
+<h4 class="prob-heading">CRUD Operations</h4>
+<div class="row">
+  <div class="col-xs-12 add-section">
+    {{#if addUserClicked}}
+      <div class="col-xs-4">
+        {{input type="text" value=frstName placeholder="Enter First Name"}}
+      </div>
+      <div class="col-xs-4">
+        {{input type="text" value=lstName placeholder="Enter Last Name"}}
+      </div>
+      <button {{action "addUserHandler"}} class="btn btn-primary">
+        Add User
+      </button>
+      {{#if addErrorflag}}
+        <div class="error col-xs-12">
+          Error While Adding the Record
+        </div>
+      {{/if}}
+      {{else}}
+        <button {{action "addUser"}} class="btn btn-primary">
+          Add User
+        </button>
+    {{/if}}
+
+  </div>
+  <div class="col-xs-12">
+    <h4 class="prob-heading">List of user</h4>
+    {{#if opErrorFlag}}
+      <div class="row">
+        <div class="error col-xs-12">
+          Error While Adding the Record
+        </div>
+      </div>
+    {{/if}}
+    <div class="list-user-container">
+      <div class="row list-user-header">
+        <div class="col-xs-4">
+          <span>User First Name</span>
+        </div>
+        <div class="col-xs-4">
+          <span>User Last Name</span>
+        </div>
+      </div>
+      {{#each user-data as |user|}}
+            <div class="row margin-btm-15">
+              {{#if user.editClicked}}
+                  <div class="col-xs-4">
+                    {{input type="text" value=user.firstName placeholder="Enter First Name"}}
+                  </div>
+                  <div class="col-xs-4">
+                    {{input type="text" value=user.lastName placeholder="Enter First Name"}}
+                  </div>
+                  <button {{action "saveUser" user}} class="btn btn-primary">
+                    Save
+                  </button>
+                {{else}}
+                  <div class="col-xs-4">
+                    {{user.firstName}}
+                  </div>
+                  <div class="col-xs-4">
+                    {{user.lastName}}
+                  </div>
+                  <button {{action "editUser" user}} class="btn btn-primary">
+                    Edit
+                  </button>
+              {{/if}}
+              <button {{action "deleteUser" user.id}} class="btn btn-primary">
+                Delete
+              </button>
+            </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

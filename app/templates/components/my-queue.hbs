@@ -1,0 +1,38 @@
+<!-- {{yield}} -->
+<!-- <div class="row">
+  <div class="col-xs-3">
+    <button {{action "addToqueue"}}>Add to queue</button>
+  </div>
+  <div class="col-xs-3">
+    <button {{action "removeFromqueue"}}>Remove from queue</button>
+  </div>
+  <div class="col-xs-3">
+    <button {{action "resetqueue"}}>Reset queue</button>
+  </div>
+  <div class="col-xs-3">
+    <button {{action "searchInqueue"}}>Search in queue</button>
+  </div>
+</div> -->
+<h4 class="prob-heading">Queue</h4>
+{{input value=value
+        class="light"
+        placeholder="Enter Item"}}
+<button class="margin-left-5 pad-all-1rem" {{action "addToqueue"}}>Add to queue</button>
+<button class="margin-left-5 pad-all-1rem" {{action "removeFromqueue"}}>Remove from queue</button>
+<button class="margin-left-5 pad-all-1rem" {{action "resetqueue"}}>Reset queue</button>
+<button class="margin-left-5 pad-all-1rem" {{action "searchInqueue"}}>Search in queue</button>
+<div>
+  {{#if isSearched}}
+    {{#if itemExist}}
+      <h4>Item present in queue</h4>
+      {{else}}
+      <h4>Item not present queue</h4>
+    {{/if}}
+  {{/if}}
+  <h4>Queue contents</h4>
+  <ul class="results">
+    {{#each list.queue as |item|}}
+      <li>{{item}}</li>
+    {{/each}}
+  </ul>
+</div>

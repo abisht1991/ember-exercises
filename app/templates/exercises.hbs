@@ -1,0 +1,32 @@
+<div>
+  <div class="exercises-nav">
+    <!-- {{#link-to "index"}}
+      <h1> -->
+        <em>Welcome to Ember Excercises</em>
+      </h1>
+    <!-- {{/link-to}} -->
+    <div>
+      {{#link-to "exercises.queue" class="menu-about"}}
+        Queue Problem
+      {{/link-to}}<br>
+      {{#link-to "exercises.infinite-scroll" class="menu-contact"}}
+        Infinite Scroll Problem
+      {{/link-to}}<br>
+      {{#link-to "exercises.auto-complete" class="menu-contact"}}
+        Auto Complete Problem
+      {{/link-to}}<br>
+      {{#link-to "exercises.from-to-list" class="menu-contact"}}
+        From To List Problem
+      {{/link-to}}<br>
+      {{#link-to "exercises.my-editor" class="menu-contact"}}
+        Editor Problem
+      {{/link-to}}<br>
+      {{#link-to "exercises.crud-ops" class="menu-contact"}}
+        CRUD Operations
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

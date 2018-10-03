@@ -1,0 +1,13 @@
+<ul>
+  {{#each-in obj-data as |listKey values|}}
+    <li>
+      {{#if (is-string values)}}
+          {{listKey}}: {{values}}
+        {{else if (is-array values)}}
+          {{listKey}}: {{my-array-display array-data=values}}
+        {{else if (is-object values)}}
+            {{listKey}}: {{my-obj-display obj-data=values}}
+      {{/if}}
+    </li>
+  {{/each-in}}
+</ul>

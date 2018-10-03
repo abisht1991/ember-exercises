@@ -1,0 +1,33 @@
+<h4 class="prob-heading">From To List</h4>
+<div class="row">
+  <div class="col col-xs-6 left-pane">
+    <h4>Left Pane</h4>
+    <button {{action "moveSelectedToRight"}} class="btn btn-primary">
+      Move Selected to Right
+    </button>
+      <button {{action "moveAllToRight"}} class="btn btn-primary">
+        Move All to Right
+      </button>
+      <ul class="results">
+        {{#each left-pane-data as |item|}}
+          <!-- <li onclick={{action "leftPaneClickHandler"}}>{{item}}</li> -->
+          <li class="{{if item.isSelected 'active' ''}}" onclick={{action "leftPaneClickHandler" item}}>{{item.name}}</li>
+        {{/each}}
+      </ul>
+  </div>
+  <div class="col col-xs-6">
+    <h4>Right Pane</h4>
+    <button {{action "moveSelectedToLeft"}} class="btn btn-primary">
+      Move Selected to Left
+    </button>
+      <button {{action "moveAllToLeft"}} class="btn btn-primary">
+        Move All to Left
+      </button>
+      <ul class="results">
+        {{#each right-pane-data as |item|}}
+          <!-- <li onclick={{action "rightPaneClickHandler"}}>{{item}}</li> -->
+          <li class="{{if item.isSelected 'active' ''}}" onclick={{action "rightPaneClickHandler" item}}>{{item.name}}</li>
+        {{/each}}
+      </ul>
+  </div>
+</div>
